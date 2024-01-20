@@ -24,17 +24,17 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.01" />
 
     <ImageView
         android:id="@+id/img_Initial"
         android:layout_width="286dp"
         android:layout_height="286dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_Initial_Title"
         app:srcCompat="@drawable/hambuger" />
@@ -43,7 +43,7 @@
         android:id="@+id/text_Initial_Wel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins_bold"
         android:lineSpacingExtra="2sp"
         android:text="@string/text_Initial_Wel"
@@ -54,7 +54,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/img_Initial"
-        app:layout_constraintVertical_bias="0.004" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/button_Initial"
@@ -77,7 +77,7 @@
         android:id="@+id/text_Initial_Sub"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="2dp"
         android:fontFamily="@font/poppins"
         android:text="@string/text_Initial_Sub"
         android:textAlignment="center"
@@ -87,17 +87,34 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_Initial_Wel"
-        app:layout_constraintVertical_bias="0.112" />
+        app:layout_constraintVertical_bias="0.053" />
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/field_Initial"
-        android:layout_width="94dp"
-        android:layout_height="56dp"
-        android:ems="10"
-        android:inputType="numberDecimal"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="188dp"
+        android:layout_height="62dp"
+        android:layout_margin="16dp"
+        android:hint="@string/input_Initial"
+        android:textAlignment="center"
+        android:textSize="5sp"
+
+        app:hintAnimationEnabled="true"
         app:layout_constraintBottom_toTopOf="@+id/button_Initial"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_Initial_Sub" />
+        app:layout_constraintTop_toBottomOf="@+id/text_Initial_Sub"
+        app:layout_constraintVertical_bias="0.486">
+
+
+        <AutoCompleteTextView
+            android:id="@+id/auto_Initial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:textAlignment="center"
+            android:textSize="12sp"></AutoCompleteTextView>
+    </com.google.android.material.textfield.TextInputLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

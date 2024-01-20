@@ -7,7 +7,7 @@
 
     <style name="Theme.Menu" parent="Base.Theme.Menu" />
 
-    <style name="Theme.Menu.NoActionBar">
+    <style name="Theme.Menu.ActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>

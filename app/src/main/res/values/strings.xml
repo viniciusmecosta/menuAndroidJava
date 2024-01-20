@@ -5,7 +5,11 @@
     <string name="text_Initial_Sub">Para tornar sua experiência ainda mais prática e agradável, agora você pode acessar nosso cardápio online! Por gentileza, selecione o número da sua mesa e clique em continuar.</string>
     <string name="text_Button_Initial">Confirmar</string>
     <string name="text_Menu_Title">Cardápio</string>
-    <string name="title_activity_teste">teste</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
+    <string name="input_Initial">Selecione uma mesa</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dessert_Page">Sobremesas</string>
+    <string name="starter_Page">Entradas</string>
+    <string name="drinks_Page">Bebidas</string>
+    <string name="maincourse_Page">Principal</string>
 </resources>
