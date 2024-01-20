@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Menu</string>
+    <string name="text_Initial_Title">Cardápio Digital</string>
+    <string name="text_Initial_Wel">Olá, Seja bem vindo ao nosso restaurante!</string>
+    <string name="text_Initial_Sub">Para tornar sua experiência ainda mais prática e agradável, agora você pode acessar nosso cardápio online! Por gentileza, selecione o número da sua mesa e clique em continuar.</string>
+    <string name="text_Button_Initial">Confirmar</string>
+    <string name="text_Menu_Title">Cardápio</string>
+    <string name="title_activity_teste">teste</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+</resources>
