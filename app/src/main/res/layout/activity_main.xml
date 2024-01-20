@@ -37,7 +37,7 @@
         app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_Initial_Title"
-        app:srcCompat="@drawable/hambuger" />
+        app:srcCompat="@drawable/hamburger" />
 
     <TextView
         android:id="@+id/text_Initial_Wel"

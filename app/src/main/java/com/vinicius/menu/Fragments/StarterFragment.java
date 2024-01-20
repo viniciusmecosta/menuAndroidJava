@@ -3,26 +3,26 @@ package com.vinicius.menu.Fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.vinicius.menu.Models.Dish;
 import com.vinicius.menu.R;
+import com.vinicius.menu.adapter.FoodAdapter;
+import com.vinicius.menu.databinding.FragmentStarterBinding;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link StarterFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+
 public class StarterFragment extends Fragment {
+    private FragmentStarterBinding binding;
+    private FoodAdapter foodAdapter;
+    private ArrayList<Dish> foodList = new ArrayList<>();
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
@@ -30,15 +30,6 @@ public class StarterFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Starter.
-     */
-    // TODO: Rename and change types and number of parameters
     public static StarterFragment newInstance(String param1, String param2) {
         StarterFragment fragment = new StarterFragment();
         Bundle args = new Bundle();
@@ -61,6 +52,62 @@ public class StarterFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_starter, container, false);
+        binding = FragmentStarterBinding.inflate(inflater, container, false);
+        return binding.getRoot();
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        RecyclerView recyclerViewFood = binding.recycleViewStarter;
+        recyclerViewFood.setLayoutManager(new LinearLayoutManager(requireContext()));
+        recyclerViewFood.setHasFixedSize(true);
+
+        foodAdapter = new FoodAdapter(foodList, requireContext());
+        recyclerViewFood.setAdapter(foodAdapter);
+        getDish();
+    }
+    private void getDish(){
+        Dish dish1 = new Dish(
+                "R$ 20,00",
+                "20mim",
+                "Batata Frita",
+                "Batata Frita 300g",
+                R.drawable.batata,
+                false
+        );
+        Dish dish2 = new Dish(
+                "R$ 30,00",
+                "40mim",
+                "Macaxeira Frita",
+                "Macaxeira Frita 100g",
+                R.drawable.mandioca,
+                false
+        );
+        Dish dish3 = new Dish(
+                "R$ 20,00",
+                "20mim",
+                "Camarão Empanado",
+                "Camarão Empanado 400g",
+                R.drawable.camarao,
+                false
+        );
+        /*
+        Dish dish4 = new Dish(
+                "20,00",
+                "20mim",
+                "Batata Frita",
+                "Batata Frita 300g",
+                R.drawable.hamburger,
+                false
+        );
+
+        foodList.add(dish3);
+        foodList.add(dish4);*/
+        foodList.add(dish1);
+        foodList.add(dish2);
+        foodList.add(dish3);
+
     }
 }

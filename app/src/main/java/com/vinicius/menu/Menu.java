@@ -19,15 +19,12 @@ import com.vinicius.menu.Fragments.StarterFragment;
 public class Menu extends AppCompatActivity {
     private SmartTabLayout smartTabLayout;
     private ViewPager viewPager;
-    private Toolbar toolbar;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-        toolbar = findViewById(R.id.action_Bar);
-        setSupportActionBar(toolbar);
 
         smartTabLayout = findViewById(R.id.menu_Tab_Pager);
         viewPager = findViewById(R.id.menu_Pager);
@@ -41,8 +38,5 @@ public class Menu extends AppCompatActivity {
                 .create());
         viewPager.setAdapter(adapter);
         smartTabLayout.setViewPager(viewPager);
-
-
-
     }
 }
