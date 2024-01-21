@@ -7,5 +7,4 @@
     android:maxLines="1"
     android:textAlignment="center"
     android:textAppearance="?attr/textAppearanceSubtitle1">
-
 </TextView>

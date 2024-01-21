@@ -34,8 +34,8 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
         holder.binding.imgFood.setBackgroundResource(dishList.get(position).getImgFood());
         holder.binding.txtFoodName.setText(dishList.get(position).getName());
         holder.binding.txtFoodDescription.setText(dishList.get(position).getDescription());
-        holder.binding.txtFoodPrice.setText(dishList.get(position).getPrice());
-        holder.binding.txtFoodTime.setText(dishList.get(position).getTime());
+        holder.binding.txtFoodPrice.setText(String.valueOf(dishList.get(position).getPrice()));
+        holder.binding.txtFoodTime.setText(String.valueOf(dishList.get(position).getTime()));
 
     }
 

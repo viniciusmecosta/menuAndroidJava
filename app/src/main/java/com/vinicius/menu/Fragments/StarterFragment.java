@@ -70,44 +70,39 @@ public class StarterFragment extends Fragment {
     }
     private void getDish(){
         Dish dish1 = new Dish(
-                "R$ 20,00",
-                "20mim",
+                20.25,
+                12,
                 "Batata Frita",
                 "Batata Frita 300g",
-                R.drawable.batata,
-                false
+                R.drawable.batata
+
         );
         Dish dish2 = new Dish(
-                "R$ 30,00",
-                "40mim",
+                146.87,
+                14,
                 "Macaxeira Frita",
                 "Macaxeira Frita 100g",
-                R.drawable.mandioca,
-                false
+                R.drawable.macaxeira
+
         );
         Dish dish3 = new Dish(
-                "R$ 20,00",
-                "20mim",
+                42.98,
+                16,
                 "Camarão Empanado",
                 "Camarão Empanado 400g",
-                R.drawable.camarao,
-                false
-        );
-        /*
-        Dish dish4 = new Dish(
-                "20,00",
-                "20mim",
-                "Batata Frita",
-                "Batata Frita 300g",
-                R.drawable.hamburger,
-                false
-        );
+                R.drawable.camarao
 
-        foodList.add(dish3);
-        foodList.add(dish4);*/
+        );
+        Dish dish4 = new Dish(
+                40.76,
+                18,
+                "Pão de Alho",
+                "Pão de Alho 450g",
+                R.drawable.paodealho
+        );
         foodList.add(dish1);
         foodList.add(dish2);
         foodList.add(dish3);
-
+        foodList.add(dish4);
     }
 }

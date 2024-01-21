@@ -1,11 +1,9 @@
 package com.vinicius.menu;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.appcompat.widget.ToolbarWidgetWrapper;
+
 import androidx.viewpager.widget.ViewPager;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import com.ogaclejapan.smarttablayout.SmartTabLayout;

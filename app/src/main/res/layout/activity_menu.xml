@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Menu"
     android:orientation="vertical">
-
-
     <TextView
         android:id="@+id/text_Menu_Title"
         android:layout_width="match_parent"
@@ -26,10 +24,10 @@
         app:stl_indicatorInFront="false"
         app:stl_indicatorInterpolation="smart"
         app:stl_indicatorGravity="bottom"
-        app:stl_indicatorColor="#40C4FF"
-        app:stl_indicatorThickness="4dp"
+        app:stl_indicatorColor="@color/colorPrimary"
+        app:stl_indicatorThickness="6dp"
         app:stl_indicatorWidth="auto"
-        app:stl_indicatorCornerRadius="2dp"
+        app:stl_indicatorCornerRadius="3dp"
         app:stl_overlineColor="#4D000000"
         app:stl_overlineThickness="0dp"
         app:stl_underlineColor="#4D000000"
@@ -44,14 +42,12 @@
         app:stl_defaultTabTextMinWidth="0dp"
         app:stl_distributeEvenly="true"
         app:stl_clickable="true"
-        app:stl_titleOffset="24dp"
+        app:stl_titleOffset="6dp"
         app:stl_drawDecorationAfterTab="true" />
-
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/menu_Pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/menu_Tab_Pager"
-        />
-
+        android:layout_height="wrap_content"
+        android:layout_below="@id/menu_Tab_Pager">
+    </androidx.viewpager.widget.ViewPager>
 </LinearLayout>
