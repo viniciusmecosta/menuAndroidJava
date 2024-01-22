@@ -28,7 +28,6 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
         listItem = FoodItemBinding.inflate(LayoutInflater.from(context),parent,false);
         return new FoodViewHolder(listItem);
     }
-
     @Override
     public void onBindViewHolder(@NonNull FoodViewHolder holder, int position) {
         holder.binding.imgFood.setBackgroundResource(dishList.get(position).getImgFood());
@@ -38,15 +37,12 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
         holder.binding.txtFoodTime.setText(String.valueOf(dishList.get(position).getTime()));
 
     }
-
     @Override
     public int getItemCount() {
         return dishList.size();
     }
-
     public static class FoodViewHolder extends RecyclerView.ViewHolder{
         FoodItemBinding binding;
-
         public FoodViewHolder(FoodItemBinding binding) {
             super(binding.getRoot());
             this.binding = binding;

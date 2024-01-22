@@ -3,11 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="230dp"
-    android:layout_margin="10dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginTop="10dp"
     app:cardCornerRadius="20dp"
-    android:background="@color/greyLight"
+    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:cardBackgroundColor="@color/greyLight"
@@ -16,6 +20,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
+
         <androidx.cardview.widget.CardView
             android:id="@+id/containerImg"
             android:layout_width="match_parent"
@@ -28,6 +33,7 @@
             app:cardCornerRadius="15dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
+
             <ImageView
                 android:id="@+id/imgFood"
                 android:layout_width="match_parent"
@@ -37,6 +43,7 @@
 
             </ImageView>
         </androidx.cardview.widget.CardView>
+
         <TextView
             android:id="@+id/txt_food_Name"
             android:layout_width="wrap_content"
@@ -53,7 +60,8 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/containerImg"
-            app:layout_constraintVertical_bias="0.078"></TextView>
+            app:layout_constraintVertical_bias="0.078" />
+
         <TextView
             android:id="@+id/txt_food_description"
             android:layout_width="wrap_content"
@@ -67,6 +75,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/containerImg"
             app:layout_constraintVertical_bias="0.571"></TextView>
+
         <TextView
             android:id="@+id/txt_food_price"
             android:layout_width="100dp"
@@ -78,8 +87,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.143"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_food_description">
-        </TextView>
+            app:layout_constraintTop_toBottomOf="@+id/txt_food_description"></TextView>
+
         <CheckBox
             android:id="@+id/checkBoxDIsh"
             android:layout_width="wrap_content"
@@ -93,6 +102,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_food_mim"
             app:layout_constraintVertical_bias="1.0" />
+
         <TextView
             android:id="@+id/txt_food_time"
             android:layout_width="wrap_content"
@@ -108,8 +118,8 @@
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/containerImg"
-            app:layout_constraintVertical_bias="1.0">
-        </TextView>
+            app:layout_constraintVertical_bias="1.0"></TextView>
+
         <TextView
             android:id="@+id/txt_food_mim"
             android:layout_width="wrap_content"
@@ -122,8 +132,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.955"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/containerImg">
-        </TextView>
+            app:layout_constraintTop_toBottomOf="@+id/containerImg"></TextView>
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
@@ -137,6 +147,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_food_description" />
+
         <ImageView
             android:id="@+id/img_Time"
             android:layout_width="16dp"
@@ -150,5 +161,7 @@
             app:layout_constraintTop_toBottomOf="@+id/containerImg"
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/clock" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
