@@ -8,16 +8,16 @@
     android:orientation="vertical">
     <TextView
         android:background="@color/white"
-        android:id="@+id/text_Menu_Title"
+        android:id="@+id/text_menu_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_extrabold"
-        android:text="@string/text_Menu_Title"
+        android:text="@string/str_menu_title"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="24sp" />
     <com.ogaclejapan.smarttablayout.SmartTabLayout
-        android:id="@+id/menu_Tab_Pager"
+        android:id="@+id/tab_menu"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         app:stl_indicatorAlwaysInCenter="false"
@@ -49,6 +49,6 @@
         android:id="@+id/menu_Pager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/menu_Tab_Pager">
+        android:layout_below="@id/tab_menu">
     </androidx.viewpager.widget.ViewPager>
 </LinearLayout>

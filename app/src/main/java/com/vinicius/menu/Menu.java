@@ -17,14 +17,12 @@ import com.vinicius.menu.Fragments.StarterFragment;
 public class Menu extends AppCompatActivity {
     private SmartTabLayout smartTabLayout;
     private ViewPager viewPager;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        smartTabLayout = findViewById(R.id.menu_Tab_Pager);
+        smartTabLayout = findViewById(R.id.tab_menu);
         viewPager = findViewById(R.id.menu_Pager);
 
         FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(

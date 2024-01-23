@@ -7,17 +7,17 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.vinicius.menu.Models.Dish;
+import com.vinicius.menu.Models.Food;
 import com.vinicius.menu.databinding.FoodItemBinding;
 
 import java.util.ArrayList;
 
 public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder> {
-    private final ArrayList<Dish> dishList;
+    private final ArrayList<Food> foodList;
     private final Context context;
 
-    public FoodAdapter(ArrayList<Dish> dishList, Context context) {
-        this.dishList = dishList;
+    public FoodAdapter(ArrayList<Food> foodList, Context context) {
+        this.foodList = foodList;
         this.context = context;
     }
 
@@ -30,16 +30,16 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
     }
     @Override
     public void onBindViewHolder(@NonNull FoodViewHolder holder, int position) {
-        holder.binding.imgFood.setBackgroundResource(dishList.get(position).getImgFood());
-        holder.binding.txtFoodName.setText(dishList.get(position).getName());
-        holder.binding.txtFoodDescription.setText(dishList.get(position).getDescription());
-        holder.binding.txtFoodPrice.setText(String.valueOf(dishList.get(position).getPrice()));
-        holder.binding.txtFoodTime.setText(String.valueOf(dishList.get(position).getTime()));
+        holder.binding.imageFood.setBackgroundResource(foodList.get(position).getImgFood());
+        holder.binding.textFoodName.setText(foodList.get(position).getName());
+        holder.binding.textFoodDescription.setText(foodList.get(position).getDescription());
+        holder.binding.textFoodPrice.setText(String.format("R$ %.2f", foodList.get(position).getPrice()));
+        holder.binding.textFoodTime.setText(String.valueOf(foodList.get(position).getTime()));
 
     }
     @Override
     public int getItemCount() {
-        return dishList.size();
+        return foodList.size();
     }
     public static class FoodViewHolder extends RecyclerView.ViewHolder{
         FoodItemBinding binding;

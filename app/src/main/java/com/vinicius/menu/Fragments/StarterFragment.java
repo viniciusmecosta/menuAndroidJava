@@ -9,7 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.vinicius.menu.Models.Dish;
+import com.vinicius.menu.Models.Food;
 import com.vinicius.menu.R;
 import com.vinicius.menu.adapter.FoodAdapter;
 import com.vinicius.menu.databinding.FragmentStarterBinding;
@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class StarterFragment extends Fragment {
     private FragmentStarterBinding binding;
     private FoodAdapter foodAdapter;
-    private ArrayList<Dish> foodList = new ArrayList<>();
+    private ArrayList<Food> foodList = new ArrayList<>();
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -38,7 +38,6 @@ public class StarterFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,62 +46,55 @@ public class StarterFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         binding = FragmentStarterBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
-
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        RecyclerView recyclerViewFood = binding.recycleViewStarter;
+        RecyclerView recyclerViewFood = binding.recycleStarter;
         recyclerViewFood.setLayoutManager(new LinearLayoutManager(requireContext()));
         recyclerViewFood.setHasFixedSize(true);
 
         foodAdapter = new FoodAdapter(foodList, requireContext());
         recyclerViewFood.setAdapter(foodAdapter);
-        getDish();
+        getFood();
     }
-    private void getDish(){
-        Dish dish1 = new Dish(
+    private void getFood(){
+        Food food1 = new Food(
                 20.25,
                 12,
                 "Batata Frita",
                 "Batata Frita 300g",
                 R.drawable.batata
-
         );
-        Dish dish2 = new Dish(
+        Food food2 = new Food(
                 146.87,
                 14,
                 "Macaxeira Frita",
                 "Macaxeira Frita 100g",
                 R.drawable.macaxeira
-
         );
-        Dish dish3 = new Dish(
+        Food food3 = new Food(
                 42.98,
                 16,
                 "Camarão Empanado",
                 "Camarão Empanado 400g",
                 R.drawable.camarao
-
         );
-        Dish dish4 = new Dish(
+        Food food4 = new Food(
                 40.76,
                 18,
                 "Pão de Alho",
                 "Pão de Alho 450g",
                 R.drawable.paodealho
         );
-        foodList.add(dish1);
-        foodList.add(dish2);
-        foodList.add(dish3);
-        foodList.add(dish4);
+        foodList.add(food1);
+        foodList.add(food2);
+        foodList.add(food3);
+        foodList.add(food4);
     }
 }
