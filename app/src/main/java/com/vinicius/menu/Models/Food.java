@@ -65,4 +65,7 @@ public class Food {
     public void setSelected(boolean selected) {
         isSelected = selected;
     }
+
+
 }
+

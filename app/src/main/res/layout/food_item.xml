@@ -3,9 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="16dp"
-    android:layout_marginEnd="16dp"
-    android:layout_marginTop="10dp"
     app:cardCornerRadius="20dp"
     android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -58,7 +55,7 @@
             app:layout_constraintVertical_bias="0.078" />
         <TextView
             android:id="@+id/text_food_description"
-            android:layout_width="wrap_content"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:fontFamily="@font/poppins_light"
@@ -74,7 +71,7 @@
         <TextView
             android:id="@+id/text_food_price"
             android:layout_width="100dp"
-            android:layout_height="30dp"
+            android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_bold"
             android:text=""
             android:textColor="@color/colorPrimary"
@@ -82,8 +79,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.057"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_food_description"></TextView>
-
+            app:layout_constraintTop_toBottomOf="@+id/text_food_description">
+        </TextView>
         <CheckBox
             android:id="@+id/check_buy"
             android:layout_width="wrap_content"
@@ -97,14 +94,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_food_min"
             app:layout_constraintVertical_bias="0.555" />
+
         <TextView
             android:id="@+id/text_food_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
+            android:layout_marginTop="6dp"
             android:layout_marginBottom="48dp"
             android:fontFamily="@font/poppins_bold"
-            android:text=""
+            android:text="20"
             android:textColor="@color/green"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -112,8 +110,7 @@
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/card_img"
-            app:layout_constraintVertical_bias="0.1">
-        </TextView>
+            app:layout_constraintVertical_bias="0.1"></TextView>
         <TextView
             android:id="@+id/text_food_min"
             android:layout_width="wrap_content"

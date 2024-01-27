@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.StarterFragment"
     android:orientation="vertical"
+    android:padding="10dp"
     android:background="@color/white">
 
     <androidx.core.widget.NestedScrollView
@@ -18,33 +19,33 @@
             android:orientation="vertical">
 
             <TextView
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
                 android:id="@+id/text_starter"
                 android:fontFamily="@font/poppins_bold"
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
                 android:text="@string/str_starter_title"
                 android:textAlignment="textStart"
-                android:textSize="20sp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="5dp" />
+                android:textSize="20sp" />
 
             <TextView
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
                 android:id="@+id/text_starter_subtitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
                 android:fontFamily="@font/poppins_light"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 android:textColor="@color/grey"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
                 android:text="@string/str_starter_subtitle" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycle_starter"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:elevation="10dp" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 

@@ -14,14 +14,20 @@
     <string name="drinks_Page">Bebida</string>
     <string name="maincourse_Page">Principal</string>
     <string name="str_starter_title">Entradas</string>
-    <string name="str_time_number">20</string>
+    <string name="str_main_title">Pratos Principais</string>
+    <string name="str_drinks_title">Bebidas</string>
+    <string name="str_dessert_title">Sobremesa</string>
+    <string name="str_time_number">0</string>
     <string name="str_time_est">Tempo Est.:</string>
     <string name="str_time_min">min</string>
-    <string name="str_price_number">245,44</string>
-    <string name="str_price">Total: R$</string>
+    <string name="str_price_number">0</string>
+    <string name="str_price">Total: </string>
     <string name="str_real">R$ </string>
     <string name="str_button_checkout">Checkout</string>
     <string name="str_starter_subtitle">Nossas entradas são preparadas rapidamente para satisfazer seu paladar em tempo recorde. Pratos leves e saborosos que chegam à sua mesa em apenas alguns minutos.</string>
+    <string name="str_main_subtitle">Nossos pratos principais são uma fusão de sabores e tradições, cuidadosamente preparados para encantar seu paladar. Experimente a riqueza e a profundidade de nossas especialidades, servidas com a perfeição que só a nossa cozinha pode oferecer.</string>
+    <string name="str_drinks_subtitle">Nossas bebidas são uma celebração de aromas e texturas, meticulosamente selecionadas para complementar sua refeição. Descubra a harmonia perfeita entre clássicos e inovações, servidos para refrescar e encantar seus sentidos.</string>
+    <string name="str_dessert_subtitle">Nossas sobremesas são obras de arte culinária, criadas para oferecer um final doce e memorável à sua refeição. Saboreie a delicadeza e a riqueza de nossas criações, cada uma delas uma perfeita fusão de sabor e beleza.</string>
 
 
 </resources>
