@@ -37,9 +37,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
                 android:fontFamily="@font/poppins_light"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 android:textColor="@color/grey"
-                android:text="@string/str_starter_subtitle" />
+                android:text="@string/str_main_subtitle" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycle_main_course"

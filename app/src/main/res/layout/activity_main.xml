@@ -25,24 +25,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.01" />
+
     <ImageView
         android:id="@+id/img_initial"
         android:layout_width="286dp"
         android:layout_height="286dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_title"
         app:srcCompat="@drawable/hamburger" />
+
     <TextView
-        android:background="@color/white"
         android:id="@+id/text_welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:background="@color/white"
         android:fontFamily="@font/poppins_bold"
         android:lineSpacingExtra="2sp"
         android:text="@string/str_welcome"
@@ -54,11 +56,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/img_initial"
         app:layout_constraintVertical_bias="0.0" />
+
     <Button
         android:id="@+id/button_initial"
         android:layout_width="256dp"
         android:layout_height="64dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="12dp"
         android:elevation="2dp"
         android:fontFamily="@font/poppins_bold"
         android:onClick="goMenu"
@@ -67,25 +70,25 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_initial"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
-        android:background="@color/white"
         android:id="@+id/text_subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
+        android:background="@color/white"
         android:fontFamily="@font/poppins"
         android:text="@string/str_subtitle"
         android:textAlignment="center"
         android:textColor="@color/grey"
-        app:layout_constraintBottom_toTopOf="@+id/button_initial"
+        app:layout_constraintBottom_toBottomOf="@+id/button_initial"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_welcome"
-        app:layout_constraintVertical_bias="0.053" />
+        app:layout_constraintVertical_bias="0.0" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/input_initial"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
