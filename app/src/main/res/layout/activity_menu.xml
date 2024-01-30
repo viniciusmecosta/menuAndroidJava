@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Menu"
     android:orientation="vertical">
+
     <TextView
         android:background="@color/white"
         android:id="@+id/text_menu_title"
@@ -16,19 +17,20 @@
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="24sp" />
+
     <com.ogaclejapan.smarttablayout.SmartTabLayout
         android:id="@+id/tab_menu"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         app:stl_indicatorAlwaysInCenter="false"
-        app:stl_indicatorWithoutPadding="false"
-        app:stl_indicatorInFront="false"
+        app:stl_indicatorWithoutPadding="true"
+        app:stl_indicatorInFront="true"
         app:stl_indicatorInterpolation="smart"
         app:stl_indicatorGravity="bottom"
         app:stl_indicatorColor="@color/colorPrimary"
-        app:stl_indicatorThickness="6dp"
+        app:stl_indicatorThickness="4dp"
         app:stl_indicatorWidth="auto"
-        app:stl_indicatorCornerRadius="3dp"
+        app:stl_indicatorCornerRadius="2dp"
         app:stl_overlineColor="#4D000000"
         app:stl_overlineThickness="0dp"
         app:stl_underlineColor="#4D000000"
@@ -38,17 +40,113 @@
         app:stl_defaultTabBackground="@color/white"
         app:stl_defaultTabTextAllCaps="true"
         app:stl_defaultTabTextColor="#FC000000"
-        app:stl_defaultTabTextSize="12sp"
+        app:stl_defaultTabTextSize="13sp"
         app:stl_defaultTabTextHorizontalPadding="16dp"
         app:stl_defaultTabTextMinWidth="0dp"
-        app:stl_distributeEvenly="true"
+        app:stl_distributeEvenly="false"
         app:stl_clickable="true"
-        app:stl_titleOffset="6dp"
+        app:stl_titleOffset="12dp"
         app:stl_drawDecorationAfterTab="true" />
+
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/menu_Pager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:layout_below="@id/tab_menu">
     </androidx.viewpager.widget.ViewPager>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:id="@+id/barra_checkout"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@drawable/checkout_bar_background"
+        android:elevation="4dp"
+        android:padding="8dp">
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="3dp"
+            android:src="@drawable/clock"
+            app:layout_constraintEnd_toStartOf="@+id/text_time_number"
+            app:layout_constraintHorizontal_bias="0.777"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_time_number"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_marginEnd="12dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@string/str_time_number"
+            android:textColor="@color/green"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.08"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/text_mim"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@string/str_time_min"
+            android:textColor="@color/green"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/text_time_number"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/text_price"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@string/str_price"
+            android:textAlignment="textEnd"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.023"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_price_number"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@string/str_price_number"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintEnd_toStartOf="@+id/button_checkout"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/text_price"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_checkout"
+            android:layout_width="160dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@string/str_button_checkout"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.555" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </LinearLayout>

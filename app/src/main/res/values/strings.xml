@@ -7,9 +7,9 @@
     <string name="str_menu_title">Cardápio</string>
     <string name="input_initial">Selecione uma mesa</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="dessert_Page">Sobremesa</string>
-    <string name="starter_Page">Entrada</string>
-    <string name="drinks_Page">Bebida</string>
+    <string name="dessert_Page">Sobremesas</string>
+    <string name="starter_Page">Entradas</string>
+    <string name="drinks_Page">Bebidas</string>
     <string name="maincourse_Page">Principal</string>
     <string name="str_starter_title">Entradas</string>
     <string name="str_main_title">Pratos Principais</string>
@@ -21,6 +21,7 @@
     <string name="str_price_number">0</string>
     <string name="str_price">Total: </string>
     <string name="str_real">R$ </string>
+    <string name="tab_icon">teste</string>
     <string name="str_button_checkout">Checkout</string>
     <string name="str_starter_subtitle">Nossas entradas são preparadas rapidamente para satisfazer seu paladar em tempo recorde. Pratos leves e saborosos que chegam à sua mesa em apenas alguns minutos.</string>
     <string name="str_main_subtitle">Nossos pratos principais são uma fusão de sabores e tradições, cuidadosamente preparados para encantar seu paladar. Experimente a riqueza e a profundidade de nossas especialidades, servidas com a perfeição que só a nossa cozinha pode oferecer.</string>
