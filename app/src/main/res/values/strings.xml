@@ -2,7 +2,7 @@
     <string name="app_name">Menu</string>
     <string name="str_title">Cardápio Digital</string>
     <string name="str_welcome">Olá, Seja bem vindo ao nosso restaurante!</string>
-    <string name="str_subtitle">Para tornar sua experiência ainda mais prática e agradável, agora você pode acessar nosso cardápio online! Por gentileza, selecione o número da sua mesa e clique em continuar.</string>
+    <string name="str_subtitle">Acesse nosso cardápio online para uma experiência prática. Informe seu nome e número da mesa, depois clique em "continuar".</string>
     <string name="str_button_initial">Confirmar</string>
     <string name="str_menu_title">Cardápio</string>
     <string name="input_initial">Selecione uma mesa</string>
@@ -16,10 +16,8 @@
     <string name="str_drinks_title">Bebidas</string>
     <string name="str_dessert_title">Sobremesa</string>
     <string name="str_time_number">0</string>
-    <string name="str_time_est">Tempo Est.:</string>
-    <string name="str_time_min">min</string>
     <string name="str_price_number">0</string>
-    <string name="str_price">Total: </string>
+    <string name="str_price">Total:  </string>
     <string name="str_real">R$ </string>
     <string name="tab_icon">teste</string>
     <string name="str_button_checkout">Checkout</string>
@@ -27,4 +25,10 @@
     <string name="str_main_subtitle">Nossos pratos principais são uma fusão de sabores e tradições, cuidadosamente preparados para encantar seu paladar. Experimente a riqueza e a profundidade de nossas especialidades, servidas com a perfeição que só a nossa cozinha pode oferecer.</string>
     <string name="str_drinks_subtitle">Nossas bebidas são uma celebração de aromas e texturas, meticulosamente selecionadas para complementar sua refeição. Descubra a harmonia perfeita entre clássicos e inovações, servidos para refrescar e encantar seus sentidos.</string>
     <string name="str_dessert_subtitle">Nossas sobremesas são obras de arte culinária, criadas para oferecer um final doce e memorável à sua refeição. Saboreie a delicadeza e a riqueza de nossas criações, cada uma delas uma perfeita fusão de sabor e beleza.</string>
+    <string name="title_activity_observation_dialog_fragment">ObservationDialogFragment</string>
+    <string name="add_observation">Adicionar Observação</string>
+    <string name="str_button_order">Realizar Pedido</string>
+    <string name="str_timer_title">Seu Pedido Está a Caminho!</string>
+    <string name="str_timer_subtitle1">Seu pedido já está na cozinha! Estamos cuidando de cada detalhe para que tudo seja perfeito. Aguarde enquanto preparamos sua experiência.</string>
+    <string name="str_timer_subtitle2">Boa notícia: seu pedido pode chegar mais cedo! Para os mais ansiosos, acompanhem o progresso pelo timer. Falta pouco para saborear nosso preparo!</string>
 </resources>

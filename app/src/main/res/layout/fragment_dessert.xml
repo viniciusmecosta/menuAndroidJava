@@ -25,7 +25,7 @@
                 android:fontFamily="@font/poppins_bold"
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
-                android:text="@string/str_dessert_title"
+                android:text="@string/dessert_Page"
                 android:textAlignment="textStart"
                 android:textSize="20sp" />
 

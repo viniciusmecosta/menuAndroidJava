@@ -1,12 +1,10 @@
 package com.vinicius.menu;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
-
+import androidx.appcompat.app.AppCompatActivity;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 import com.vinicius.menu.Fragments.DessertFragment;
@@ -30,6 +28,11 @@ public class Menu extends AppCompatActivity implements
     private final Map<String, ArrayList<Food>> selectedFoodItems = new HashMap<>();
     private ArrayList<Food> allFoodItems;
 
+    // Classe auxiliar para armazenar os itens selecionados
+    public static class SelectedItemsHolder {
+        public static ArrayList<Food> selectedItems = new ArrayList<>();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +55,15 @@ public class Menu extends AppCompatActivity implements
                 if (totalPrice == 0) {
                     Toast.makeText(Menu.this, "Por favor, selecione algum item.", Toast.LENGTH_SHORT).show();
                 } else {
+                    ArrayList<Food> selectedItems = new ArrayList<>();
+                    for (ArrayList<Food> category : selectedFoodItems.values()) {
+                        for (Food food : category) {
+                            if (food.isSelected()) {
+                                selectedItems.add(food);
+                            }
+                        }
+                    }
+                    SelectedItemsHolder.selectedItems = selectedItems; // Armazena os itens selecionados
                     Intent intent = new Intent(Menu.this, Checkout.class);
                     startActivity(intent);
                 }
@@ -185,7 +197,7 @@ public class Menu extends AppCompatActivity implements
         allFoodItems.add(new Food(
                 23.00,
                 10,
-                "Cheesecake de Frutas Vermelhas",
+                "Cheesecake Frutas Vermelhas",
                 "Cheesecake suave e cremoso com uma camada generosa de geleia de frutas vermelhas no topo",
                 R.drawable.cheesecake,
                 "Dessert"
@@ -216,20 +228,20 @@ public class Menu extends AppCompatActivity implements
     }
 
     private void updateAverageTimeAndPrice() {
-        int totalTime = 0;
+        int maxTime = 0; // Usado para encontrar o maior tempo
         totalPrice = 0;
-        int count = 0;
         for (ArrayList<Food> foods : selectedFoodItems.values()) {
             for (Food food : foods) {
                 if (food.isSelected()) {
-                    totalTime += food.getTime();
+                    if (food.getTime() > maxTime) {
+                        maxTime = food.getTime(); // Atualiza maxTime se o tempo do item for maior
+                    }
                     totalPrice += food.getPrice();
-                    count++;
                 }
             }
         }
-        int averageTime = count > 0 ? totalTime / count : 0;
-        binding.textTimeNumber.setText(String.valueOf(averageTime));
+        // Aqui você pode continuar a usar maxTime para definir o tempo estimado
+        binding.textTimeNumber.setText(String.valueOf(maxTime) + " min");
         binding.textPriceNumber.setText(String.format("R$ %.2f", totalPrice));
     }
 }

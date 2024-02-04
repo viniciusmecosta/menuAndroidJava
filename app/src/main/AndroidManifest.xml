@@ -13,6 +13,14 @@
         android:theme="@style/Theme.Menu"
         tools:targetApi="31">
         <activity
+            android:name=".Time"
+            android:exported="false" />
+        <activity
+            android:name=".ObservationDialogFragment"
+            android:exported="false"
+            android:label="@string/title_activity_observation_dialog_fragment"
+            android:theme="@style/Theme.Menu" />
+        <activity
             android:name=".Checkout"
             android:exported="false" />
         <activity

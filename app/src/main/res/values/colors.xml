@@ -3,7 +3,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="black">#000000</color>
     <color name="grey">#FF797D82</color>
-    <color name="greyLight">#F1F2F6</color>
+    <color name="red">#F44336</color>
+    <color name="greyLight">#3373757C</color>
     <color name="green">#19BD0B</color>
     <color name="colorPrimary">#FF77C4FA</color>
 </resources>

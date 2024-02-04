@@ -8,6 +8,7 @@ public class Food {
     private final int imgFood;
     private boolean isSelected;
     private final String category;
+    private String observation;
 
     public Food(double price, int time, String name, String description, int imgFood, String category) {
         this.price = price;
@@ -17,8 +18,8 @@ public class Food {
         this.imgFood = imgFood;
         this.isSelected = false;
         this.category = category;
+        this.observation = "";
     }
-
     public double getPrice() {
         return price;
     }
@@ -54,4 +55,6 @@ public class Food {
     public String getCategory() {
         return category;
     }
+    public String getObservation() {return observation;}
+    public void setObservation(String observation) {this.observation = observation;}
 }
