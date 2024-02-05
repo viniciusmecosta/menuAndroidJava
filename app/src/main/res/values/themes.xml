@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Menu" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <item name="android:statusBarColor">@color/colorPrimary</item>
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="android:statusBarColor">@color/blueDark</item>
+        <item name="colorPrimary">@color/blueDark</item>
     </style>
 
     <style name="Theme.Menu" parent="Base.Theme.Menu" />
@@ -14,7 +14,7 @@
     </style>
     <style name="roundedImageViewRounded">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">50%</item>
+        <item name="cornerSize">90%</item>
     </style>
 
     <style name="Theme.Menu.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

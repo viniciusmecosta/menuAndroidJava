@@ -62,7 +62,7 @@
             android:fontFamily="@font/poppins_bold"
             android:text="@string/str_button_order"
             android:textAlignment="textStart"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -75,7 +75,7 @@
             android:layout_marginBottom="20dp"
             android:fontFamily="@font/poppins_bold"
             android:text=""
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />

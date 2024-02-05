@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
+    android:padding="12dp"
     android:background="@color/white"
     tools:context=".Time">
     <TextView
@@ -41,17 +41,18 @@
         android:layout_height="300dp"
         android:layout_marginTop="24dp"
         android:background="@color/white"
-        android:src="@drawable/ok_blue"
+        android:src="@drawable/ok_green"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_subtitle1">
     </ImageView>
+
     <TextView
         android:id="@+id/txt_timer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:background="@color/white"
         android:fontFamily="@font/poppins_light"
         android:gravity="center"
@@ -68,6 +69,7 @@
         android:max="100"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_timer" />
+
     <TextView
         android:id="@+id/txt_subtitle2"
         android:layout_width="match_parent"
@@ -81,6 +83,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progress_bar">
-    </TextView>
+        app:layout_constraintTop_toBottomOf="@+id/progress_bar"></TextView>
 </androidx.constraintlayout.widget.ConstraintLayout>
