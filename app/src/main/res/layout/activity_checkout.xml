@@ -47,7 +47,7 @@
             android:layout_marginStart="4dp"
             android:fontFamily="@font/poppins_bold"
             android:text=""
-            android:textColor="@color/red"
+            android:textColor="@color/green"
             android:textSize="14sp" />
 
 

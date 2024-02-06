@@ -37,7 +37,7 @@
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/poppins_bold"
         android:text="30Min"
-        android:textColor="@color/red"
+        android:textColor="@color/green"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -51,7 +51,7 @@
         android:layout_marginBottom="16dp"
         android:fontFamily="@font/poppins_bold"
         android:text="R$ 30,00"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -75,7 +75,7 @@
         android:layout_marginTop="8dp"
         android:fontFamily="@font/poppins_bold"
         android:text="Adicionar Observação"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/grey"
         android:textSize="12sp"
         android:clickable="true"
         android:focusable="true"

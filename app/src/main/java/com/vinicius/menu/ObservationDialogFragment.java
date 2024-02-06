@@ -4,25 +4,19 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.widget.EditText;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
-
 public class ObservationDialogFragment extends DialogFragment {
-
     public interface ObservationDialogListener {
         void onDialogPositiveClick(String observation, int position);
     }
-
     ObservationDialogListener listener;
     private final int position;
-
     public ObservationDialogFragment(ObservationDialogListener listener, int position) {
         this.listener = listener;
         this.position = position;
     }
-
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {

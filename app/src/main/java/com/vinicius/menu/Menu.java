@@ -16,31 +16,24 @@ import com.vinicius.menu.databinding.ActivityMenuBinding;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-
 public class Menu extends AppCompatActivity implements
         StarterFragment.StarterFragmentCallback,
         MainCourseFragment.MainCourseFragmentCallback,
         DrinksFragment.DrinksFragmentCallback,
         DessertFragment.DessertFragmentCallback {
-
     private ActivityMenuBinding binding;
     private double totalPrice;
     private final Map<String, ArrayList<Food>> selectedFoodItems = new HashMap<>();
     private ArrayList<Food> allFoodItems;
-
-    // Classe auxiliar para armazenar os itens selecionados
     public static class SelectedItemsHolder {
         public static ArrayList<Food> selectedItems = new ArrayList<>();
     }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMenuBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
         initializeFoodItems();
-
         FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(), FragmentPagerItems.with(this)
                 .add(R.string.starter_Page, StarterFragment.class)
@@ -53,7 +46,7 @@ public class Menu extends AppCompatActivity implements
         binding.buttonCheckout.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if (totalPrice == 0) {
-                    Toast.makeText(Menu.this, "Por favor, selecione algum item.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Menu.this, "Por favor, escolha pelo menos um prato.", Toast.LENGTH_SHORT).show();
                 } else {
                     ArrayList<Food> selectedItems = new ArrayList<>();
                     for (ArrayList<Food> category : selectedFoodItems.values()) {
@@ -63,17 +56,15 @@ public class Menu extends AppCompatActivity implements
                             }
                         }
                     }
-                    SelectedItemsHolder.selectedItems = selectedItems; // Armazena os itens selecionados
+                    SelectedItemsHolder.selectedItems = selectedItems;
                     Intent intent = new Intent(Menu.this, Checkout.class);
                     startActivity(intent);
                 }
             }
         });
     }
-
     private void initializeFoodItems() {
         allFoodItems = new ArrayList<>();
-
         allFoodItems.add(new Food(
                 12.50,
                 10,
@@ -203,8 +194,6 @@ public class Menu extends AppCompatActivity implements
                 "Dessert"
         ));
     }
-
-
     public ArrayList<Food> getFoodItemsByCategory(String category) {
         ArrayList<Food> filteredList = new ArrayList<>();
         for (Food food : allFoodItems) {
@@ -214,19 +203,16 @@ public class Menu extends AppCompatActivity implements
         }
         return filteredList;
     }
-
     @Override
     public void onUpdateFoodItems(ArrayList<Food> foodList) {
         updateSelectedFoodItems(foodList);
         updateAverageTimeAndPrice();
     }
-
     private void updateSelectedFoodItems(ArrayList<Food> foodList) {
         if (!foodList.isEmpty()) {
             selectedFoodItems.put(foodList.get(0).getCategory(), foodList);
         }
     }
-
     private void updateAverageTimeAndPrice() {
         int maxTime = 0; // Usado para encontrar o maior tempo
         totalPrice = 0;
@@ -240,7 +226,6 @@ public class Menu extends AppCompatActivity implements
                 }
             }
         }
-        // Aqui você pode continuar a usar maxTime para definir o tempo estimado
         binding.textTimeNumber.setText(String.valueOf(maxTime) + " min");
         binding.textPriceNumber.setText(String.format("R$ %.2f", totalPrice));
     }
