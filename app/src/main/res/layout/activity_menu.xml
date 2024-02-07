@@ -4,51 +4,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="8dp"
-    tools:context=".Menu"
+    android:paddingVertical="16dp"
+    android:paddingHorizontal="8dp"
+    android:background="@color/white"
     android:orientation="vertical">
-
     <TextView
         android:background="@color/white"
         android:id="@+id/text_menu_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_extrabold"
+        android:fontFamily="@font/open_sans_bold"
         android:text="@string/str_menu_title"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="24sp" />
-
     <com.ogaclejapan.smarttablayout.SmartTabLayout
         android:id="@+id/tab_menu"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        app:stl_indicatorAlwaysInCenter="false"
-        app:stl_indicatorWithoutPadding="false"
-        app:stl_indicatorInFront="true"
-        app:stl_indicatorInterpolation="smart"
-        app:stl_indicatorGravity="bottom"
-        app:stl_indicatorColor="@color/blueDark"
-        app:stl_indicatorThickness="5dp"
-        app:stl_indicatorWidth="auto"
-        app:stl_indicatorCornerRadius="1dp"
-        app:stl_overlineColor="#4D000000"
-        app:stl_overlineThickness="0dp"
-        app:stl_underlineColor="#4D000000"
-        app:stl_underlineThickness="1dp"
-        app:stl_dividerColor="#4D000000"
-        app:stl_dividerThickness="1dp"
+        app:stl_clickable="true"
         app:stl_defaultTabBackground="@color/white"
         app:stl_defaultTabTextAllCaps="true"
         app:stl_defaultTabTextColor="#FC000000"
-        app:stl_defaultTabTextSize="13sp"
-        app:stl_defaultTabTextHorizontalPadding="16dp"
+        app:stl_defaultTabTextHorizontalPadding="2dp"
         app:stl_defaultTabTextMinWidth="0dp"
-        app:stl_distributeEvenly="false"
-        app:stl_clickable="true"
-        app:stl_titleOffset="12dp"
-        app:stl_drawDecorationAfterTab="true" />
-
+        app:stl_defaultTabTextSize="13sp"
+        app:stl_distributeEvenly="true"
+        app:stl_dividerColor="#4D000000"
+        app:stl_dividerThickness="1dp"
+        app:stl_drawDecorationAfterTab="true"
+        app:stl_indicatorAlwaysInCenter="false"
+        app:stl_indicatorColor="@color/blueDark"
+        app:stl_indicatorCornerRadius="1dp"
+        app:stl_indicatorGravity="bottom"
+        app:stl_indicatorInFront="true"
+        app:stl_indicatorInterpolation="smart"
+        app:stl_indicatorThickness="3dp"
+        app:stl_indicatorWidth="auto"
+        app:stl_indicatorWithoutPadding="false"
+        app:stl_overlineColor="#4D000000"
+        app:stl_overlineThickness="0dp"
+        app:stl_titleOffset="6dp"
+        app:stl_underlineColor="#4D000000"
+        app:stl_underlineThickness="1dp" />
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/menu_Pager"
         android:layout_width="match_parent"
@@ -56,66 +54,55 @@
         android:layout_weight="1"
         android:layout_below="@id/tab_menu">
     </androidx.viewpager.widget.ViewPager>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:id="@+id/barra_checkout"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@drawable/checkout_bar_background"
-        android:elevation="4dp"
-        android:padding="8dp">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
 
         <ImageView
+            android:layout_marginStart="16dp"
             android:id="@+id/image_clock"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="1dp"
-
-            android:src="@drawable/clock"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/clock" />
 
         <TextView
             android:id="@+id/text_time_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:fontFamily="@font/poppins_bold"
+            android:fontFamily="@font/open_sans_bold"
             android:text="@string/str_time_number"
             android:textColor="@color/green"
+            android:textSize="12sp" />
+    </LinearLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+        <Button
+            android:id="@+id/button_checkout"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:fontFamily="@font/open_sans_bold"
+            android:text="@string/str_button_checkout"
+            android:textAlignment="textStart"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/image_clock"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/text_price_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/poppins_extrabold"
+            android:layout_gravity="end"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/open_sans_bold"
             android:text="@string/str_price_number"
-            android:textColor="@color/black"
-            android:textSize="16dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/button_checkout"
-            android:layout_width="160dp"
-            android:layout_height="48dp"
-            android:layout_marginEnd="8dp"
-            android:fontFamily="@font/poppins_bold"
-            android:text="@string/str_button_checkout"
             android:textColor="@color/white"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.555" />
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </LinearLayout>

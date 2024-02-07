@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@color/white"
-        android:fontFamily="@font/poppins_extrabold"
+        android:fontFamily="@font/open_sans_bold"
         android:text="@string/str_timer_title"
         android:textAlignment="center"
         android:textColor="@color/black"
@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:background="@color/white"
-        android:fontFamily="@font/poppins"
+        android:fontFamily="@font/open_sans"
         android:text="@string/str_timer_subtitle1"
         android:textAlignment="center"
         android:textColor="@color/grey"
@@ -41,7 +41,7 @@
         android:layout_height="300dp"
         android:layout_marginTop="24dp"
         android:background="@color/white"
-        android:src="@drawable/ok_green"
+        android:src="@drawable/timer_panela"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_subtitle1">
@@ -51,22 +51,26 @@
         android:id="@+id/txt_timer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
         android:layout_marginTop="16dp"
         android:background="@color/white"
-        android:fontFamily="@font/poppins_bold"
+        android:fontFamily="@font/open_sans_bold"
         android:gravity="center"
         android:text=""
-        android:textColor="@color/black"
+        android:textColor="@color/blueDark"
         android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_ok" />
+
     <ProgressBar
         android:id="@+id/progress_bar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="12dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
         android:max="100"
+        android:progressDrawable="@drawable/progress_bar_style"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_timer" />
 
@@ -74,15 +78,14 @@
         android:id="@+id/txt_subtitle2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:background="@color/white"
-        android:fontFamily="@font/poppins"
+        android:fontFamily="@font/open_sans"
         android:text="@string/str_timer_subtitle2"
         android:textAlignment="center"
         android:textColor="@color/grey"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progress_bar">
-    </TextView>
+        app:layout_constraintTop_toBottomOf="@+id/progress_bar"></TextView>
 </androidx.constraintlayout.widget.ConstraintLayout>

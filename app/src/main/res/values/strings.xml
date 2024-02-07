@@ -10,13 +10,15 @@
     <string name="dessert_Page">Sobremesas</string>
     <string name="starter_Page">Entradas</string>
     <string name="drinks_Page">Bebidas</string>
+    <string name="str_input_table">Mesa</string>
+    <string name="str_input_name">Nome</string>
     <string name="maincourse_Page">Principal</string>
     <string name="str_starter_title">Entradas</string>
     <string name="str_main_title">Pratos Principais</string>
     <string name="str_drinks_title">Bebidas</string>
     <string name="str_dessert_title">Sobremesa</string>
-    <string name="str_time_number">0</string>
-    <string name="str_price_number">0</string>
+    <string name="str_time_number">0 min</string>
+    <string name="str_price_number">R$ 0,00</string>
     <string name="str_price">Total:  </string>
     <string name="str_real">R$ </string>
     <string name="tab_icon">teste</string>

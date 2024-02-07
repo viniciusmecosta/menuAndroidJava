@@ -5,6 +5,7 @@
     android:layout_height="100dp"
     android:layout_margin="16dp"
     android:padding="20dp"
+    android:fontFamily="@font/open_sans"
     android:background="@drawable/edit_text_background"
     android:textColor="@color/black"
     android:textColorHint="@color/grey"
