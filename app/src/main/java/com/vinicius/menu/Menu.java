@@ -220,13 +220,13 @@ public class Menu extends AppCompatActivity implements
             for (Food food : foods) {
                 if (food.isSelected()) {
                     if (food.getTime() > maxTime) {
-                        maxTime = food.getTime(); // Atualiza maxTime se o tempo do item for maior
+                        maxTime = food.getTime();
                     }
                     totalPrice += food.getPrice();
                 }
             }
         }
-        binding.textTimeNumber.setText(String.valueOf(maxTime) + " min");
+        binding.textTimeNumber.setText(String.valueOf(maxTime) + "min");
         binding.textPriceNumber.setText(String.format("R$ %.2f", totalPrice));
     }
 }

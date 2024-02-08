@@ -51,7 +51,7 @@ public class Checkout extends AppCompatActivity {
                 maxTime = item.getTime();
             }
         }
-        estimatedTimeTextView.setText(String.format("%d min", maxTime));
+        estimatedTimeTextView.setText(String.format("%dmin", maxTime));
         return maxTime;
     }
 }

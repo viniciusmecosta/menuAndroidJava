@@ -35,23 +35,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_menu_title">
     </TextView>
+
     <ImageView
         android:id="@+id/image_ok"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="60dp"
         android:background="@color/white"
         android:src="@drawable/timer_panela"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_subtitle1">
-    </ImageView>
+        app:layout_constraintTop_toBottomOf="@+id/txt_subtitle1"></ImageView>
 
     <TextView
         android:id="@+id/txt_timer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:background="@color/white"
         android:fontFamily="@font/open_sans_bold"
         android:gravity="center"
@@ -59,6 +60,7 @@
         android:textColor="@color/blueDark"
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_ok" />
 
@@ -66,11 +68,11 @@
         android:id="@+id/progress_bar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
-        android:layout_height="12dp"
-        android:layout_marginStart="4dp"
+        android:layout_height="8dp"
         android:layout_marginTop="16dp"
         android:max="100"
         android:progressDrawable="@drawable/progress_bar_style"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_timer" />
 
@@ -78,7 +80,7 @@
         android:id="@+id/txt_subtitle2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:background="@color/white"
         android:fontFamily="@font/open_sans"
         android:text="@string/str_timer_subtitle2"

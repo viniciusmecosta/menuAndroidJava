@@ -38,7 +38,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
         holder.binding.textFoodName.setText(foodList.get(position).getName());
         holder.binding.textFoodDescription.setText(foodList.get(position).getDescription());
         holder.binding.textFoodPrice.setText(String.format("R$ %.2f", foodList.get(position).getPrice()));
-        holder.binding.textFoodTime.setText(String.valueOf(foodList.get(position).getTime()) + " min");
+        holder.binding.textFoodTime.setText(String.valueOf(foodList.get(position).getTime()) + "min");
         holder.binding.checkBuy.setOnCheckedChangeListener(null);
         holder.binding.checkBuy.setChecked(foodList.get(position).isSelected());
         holder.binding.checkBuy.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

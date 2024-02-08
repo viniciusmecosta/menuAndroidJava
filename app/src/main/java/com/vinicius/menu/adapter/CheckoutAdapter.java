@@ -2,14 +2,15 @@ package com.vinicius.menu.adapter;
 
 import android.app.AlertDialog;
 import android.content.Context;
-import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.textfield.TextInputLayout;
+import com.google.android.material.textfield.TextInputEditText;
 import com.vinicius.menu.Models.Food;
 import com.vinicius.menu.R;
 
@@ -19,7 +20,6 @@ public class CheckoutAdapter extends RecyclerView.Adapter<CheckoutAdapter.ViewHo
     private final List<Food> foodList;
     private final Context context; // Store the context
 
-    // Update the constructor to accept Context
     public CheckoutAdapter(List<Food> foodList, Context context) {
         this.foodList = foodList;
         this.context = context; // Initialize the context
@@ -35,35 +35,41 @@ public class CheckoutAdapter extends RecyclerView.Adapter<CheckoutAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Food food = foodList.get(position);
-        holder.textFoodName.setText(food.getName());
+        holder.textFoodName.setText("1x " + food.getName());
         holder.textFoodPrice.setText(String.format("R$ %.2f", food.getPrice()));
         holder.textFoodDescription.setText(food.getDescription());
-        holder.textFoodTime.setText(food.getTime() + " min");
+        holder.textFoodTime.setText(food.getTime() + "min");
 
-        // Update observation text or set default
         if (food.getObservation() != null && !food.getObservation().isEmpty()) {
             holder.buttonObs.setText(food.getObservation());
         } else {
             holder.buttonObs.setText(context.getString(R.string.add_observation));
         }
 
-        // Observation button click listener
         holder.buttonObs.setOnClickListener(v -> {
-            EditText input = new EditText(context);
-            input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_MULTI_LINE);
-            input.setMinLines(1);
-            input.setMaxLines(5);
-            input.setHint("Digite sua observação aqui");
+            // Inflate the custom layout for AlertDialog
+            LayoutInflater inflater = LayoutInflater.from(context);
+            View dialogView = inflater.inflate(R.layout.custom_dialog_layout, null);
 
-            new AlertDialog.Builder(context)
-                    .setTitle("Adicionar Observação")
-                    .setView(input)
-                    .setPositiveButton("Salvar", (dialog, which) -> {
+            // Configuring TextInputLayout and TextInputEditText
+            TextInputLayout inputLayout = dialogView.findViewById(R.id.input_observation_layout);
+            TextInputEditText input = dialogView.findViewById(R.id.observation);
+
+            // Setting up hint, inputType, etc., for TextInputEditText as needed
+            input.setHint(context.getString(R.string.observation_hint)); // Ensure you have a corresponding string resource for the hint
+            input.setMinLines(3);
+            input.setMaxLines(5);
+
+            // Create and show the AlertDialog
+            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+            builder.setTitle(context.getString(R.string.add_observation))
+                    .setView(dialogView)
+                    .setPositiveButton(context.getString(R.string.save), (dialog, which) -> {
                         String observation = "OBS: " + input.getText().toString();
                         food.setObservation(observation);
                         notifyItemChanged(position);
                     })
-                    .setNegativeButton("Cancelar", null)
+                    .setNegativeButton(context.getString(R.string.cancel), null)
                     .show();
         });
     }

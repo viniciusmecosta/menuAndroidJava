@@ -17,7 +17,7 @@
     <string name="str_main_title">Pratos Principais</string>
     <string name="str_drinks_title">Bebidas</string>
     <string name="str_dessert_title">Sobremesa</string>
-    <string name="str_time_number">0 min</string>
+    <string name="str_time_number">0min</string>
     <string name="str_price_number">R$ 0,00</string>
     <string name="str_price">Total:  </string>
     <string name="str_real">R$ </string>
@@ -32,5 +32,9 @@
     <string name="str_button_order">Realizar Pedido</string>
     <string name="str_timer_title">Seu Pedido Está a Caminho!</string>
     <string name="str_timer_subtitle1">Seu pedido já está na cozinha! Estamos cuidando de cada detalhe para que tudo seja perfeito. Aguarde enquanto preparamos sua experiência.</string>
+    <string name="str_observation">Digite aqui sua Observação</string>
+    <string name="observation_hint">Escreva aqui sua Observação</string>
+    <string name="cancel">Cancelar</string>
+    <string name="save">Salvar</string>
     <string name="str_timer_subtitle2">Boa notícia: seu pedido pode chegar mais cedo! Para os mais ansiosos, acompanhem o progresso pelo timer. Falta pouco para saborear nosso preparo!</string>
 </resources>

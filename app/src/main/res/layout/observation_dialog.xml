@@ -1,17 +1,35 @@
-<?xml version="1.0" encoding="utf-8"?>
-<EditText xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/observation"
+<com.google.android.material.textfield.TextInputLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="wrap_content"
     android:layout_margin="16dp"
-    android:padding="20dp"
-    android:fontFamily="@font/open_sans"
-    android:background="@drawable/edit_text_background"
-    android:textColor="@color/black"
-    android:textColorHint="@color/grey"
-    android:inputType="textMultiLine"
-    android:minLines="3"
-    android:maxLines="5"
-    android:scrollbars="vertical"
-    android:gravity="top|start"
-    android:textSize="16sp"/>
+    android:padding="4dp"
+    app:boxBackgroundMode="outline"
+    app:boxCornerRadiusTopStart="10dp"
+    app:boxCornerRadiusTopEnd="10dp"
+    app:boxCornerRadiusBottomStart="10dp"
+    app:boxCornerRadiusBottomEnd="10dp"
+    app:hintEnabled="true"
+    app:hintTextAppearance="@style/TextAppearance.App.TextInputLayoutHint"
+    app:boxStrokeColor="@color/greyLight"
+    app:boxStrokeWidth="1dp"
+    app:boxStrokeWidthFocused="2dp">
+
+    <EditText
+        android:id="@+id/observation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/open_sans"
+        android:background="@null"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey"
+        android:inputType="textMultiLine"
+        android:minLines="3"
+        android:maxLines="5"
+        android:scrollbars="vertical"
+        android:gravity="top|start"
+        android:textSize="16sp"
+        android:hint="@string/str_observation" />
+
+</com.google.android.material.textfield.TextInputLayout>

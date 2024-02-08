@@ -1,20 +1,21 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.Menu" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <item name="android:statusBarColor">@color/blueDark</item>
         <item name="colorPrimary">@color/blueDark</item>
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 
     <style name="Theme.Menu" parent="Base.Theme.Menu" />
-
-    <style name="Theme.Menu.ActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
     <style name="roundedImageViewRounded">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">90%</item>
+    </style>
+    <style name="EditTextTheme" parent="Theme.AppCompat.Light">
+        <item name="android:inputType">textCapSentences</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+        <item name="android:background">@drawable/edit_text_background</item>
+        <item name="android:padding">10dp</item>
     </style>
 
     <style name="Theme.Menu.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
