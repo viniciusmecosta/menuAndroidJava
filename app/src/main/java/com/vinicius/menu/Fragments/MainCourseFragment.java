@@ -16,10 +16,12 @@ import com.vinicius.menu.adapter.FoodAdapter;
 import com.vinicius.menu.databinding.FragmentMainCourseBinding;
 import java.util.ArrayList;
 
+// MainCourseFragment é responsável por exibir os pratos principais disponíveis no menu.
 public class MainCourseFragment extends Fragment {
-    private FragmentMainCourseBinding binding;
-    private MainCourseFragmentCallback callback;
+    private FragmentMainCourseBinding binding; // Utiliza View Binding para acessar as views de forma segura e eficiente.
+    private MainCourseFragmentCallback callback; // Interface de callback para comunicação com a atividade principal.
 
+    // Interface para definir o callback que será chamado quando os itens de pratos principais forem atualizados.
     public interface MainCourseFragmentCallback {
         void onUpdateFoodItems(ArrayList<Food> foodList);
     }
@@ -27,22 +29,23 @@ public class MainCourseFragment extends Fragment {
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
+        // Verifica se a atividade contêiner implementou o callback necessário.
         if (context instanceof MainCourseFragmentCallback) {
             callback = (MainCourseFragmentCallback) context;
         } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement MainCourseFragmentCallback");
+            throw new RuntimeException(context.toString() + " must implement MainCourseFragmentCallback");
         }
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        callback = null;
+        callback = null; // Limpa a referência ao callback para evitar vazamentos de memória.
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // Infla o layout do fragmento usando View Binding, facilitando o acesso aos componentes da UI.
         binding = FragmentMainCourseBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
@@ -50,21 +53,24 @@ public class MainCourseFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        RecyclerView recyclerViewFood = binding.recycleMainCourse;
-        recyclerViewFood.setLayoutManager(new LinearLayoutManager(requireContext()));
-        recyclerViewFood.setHasFixedSize(true);
+        // Configura o RecyclerView com um LinearLayoutManager e o adapter para exibir os pratos principais.
+        RecyclerView recyclerViewMainCourse = binding.recycleMainCourse;
+        recyclerViewMainCourse.setLayoutManager(new LinearLayoutManager(requireContext()));
+        recyclerViewMainCourse.setHasFixedSize(true);
 
+        // Obtém a lista de pratos principais da atividade principal, filtrada pela categoria "Main".
         Menu activity = (Menu) getActivity();
         ArrayList<Food> mainCourseFoodList = activity.getFoodItemsByCategory("Main");
-        FoodAdapter foodAdapter = new FoodAdapter(mainCourseFoodList, requireContext());
-        recyclerViewFood.setAdapter(foodAdapter);
 
-        foodAdapter.setFoodItemChangeListener(new FoodAdapter.FoodItemChangeListener() {
-            @Override
-            public void onFoodItemSelectionChanged() {
-                if (callback != null) {
-                    callback.onUpdateFoodItems(mainCourseFoodList);
-                }
+        // Cria e configura o adapter para o RecyclerView com os itens de pratos principais.
+        FoodAdapter foodAdapter = new FoodAdapter(mainCourseFoodList, requireContext());
+        recyclerViewMainCourse.setAdapter(foodAdapter);
+
+        // Define um listener no adapter para detectar mudanças na seleção dos itens.
+        foodAdapter.setFoodItemChangeListener(() -> {
+            if (callback != null) {
+                // Notifica a atividade contêiner que os itens de pratos principais foram atualizados.
+                callback.onUpdateFoodItems(mainCourseFoodList);
             }
         });
     }

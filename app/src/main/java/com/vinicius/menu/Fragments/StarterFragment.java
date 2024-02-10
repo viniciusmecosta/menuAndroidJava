@@ -16,10 +16,12 @@ import com.vinicius.menu.adapter.FoodAdapter;
 import com.vinicius.menu.databinding.FragmentStarterBinding;
 import java.util.ArrayList;
 
+// StarterFragment é responsável por exibir os itens de entrada disponíveis no menu.
 public class StarterFragment extends Fragment {
-    private FragmentStarterBinding binding;
-    private StarterFragmentCallback callback;
+    private FragmentStarterBinding binding; // Utiliza View Binding para acessar as views de forma mais segura.
+    private StarterFragmentCallback callback; // Interface de callback para comunicação com a atividade principal.
 
+    // Interface para definir o callback que será chamado quando os itens de entrada forem atualizados.
     public interface StarterFragmentCallback {
         void onUpdateFoodItems(ArrayList<Food> foodList);
     }
@@ -27,22 +29,23 @@ public class StarterFragment extends Fragment {
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
+        // Verifica se a atividade contêiner implementou o callback necessário.
         if (context instanceof StarterFragmentCallback) {
             callback = (StarterFragmentCallback) context;
         } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement StarterFragmentCallback");
+            throw new RuntimeException(context.toString() + " must implement StarterFragmentCallback");
         }
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        callback = null;
+        callback = null; // Limpa a referência ao callback para evitar vazamentos de memória.
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // Infla o layout do fragmento usando View Binding.
         binding = FragmentStarterBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
@@ -50,21 +53,24 @@ public class StarterFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        RecyclerView recyclerViewFood = binding.recycleStarter;
-        recyclerViewFood.setLayoutManager(new LinearLayoutManager(requireContext()));
-        recyclerViewFood.setHasFixedSize(true);
+        // Configura o RecyclerView com um LinearLayoutManager e o adapter.
+        RecyclerView recyclerViewStarter = binding.recycleStarter;
+        recyclerViewStarter.setLayoutManager(new LinearLayoutManager(requireContext()));
+        recyclerViewStarter.setHasFixedSize(true);
 
+        // Obtém a lista de itens de entrada da atividade principal.
         Menu activity = (Menu) getActivity();
         ArrayList<Food> starterFoodList = activity.getFoodItemsByCategory("Starter");
-        FoodAdapter foodAdapter = new FoodAdapter(starterFoodList, requireContext());
-        recyclerViewFood.setAdapter(foodAdapter);
 
-        foodAdapter.setFoodItemChangeListener(new FoodAdapter.FoodItemChangeListener() {
-            @Override
-            public void onFoodItemSelectionChanged() {
-                if (callback != null) {
-                    callback.onUpdateFoodItems(starterFoodList);
-                }
+        // Cria e configura o adapter para o RecyclerView com os itens de entrada.
+        FoodAdapter foodAdapter = new FoodAdapter(starterFoodList, requireContext());
+        recyclerViewStarter.setAdapter(foodAdapter);
+
+        // Define um listener no adapter para detectar mudanças na seleção dos itens.
+        foodAdapter.setFoodItemChangeListener(() -> {
+            if (callback != null) {
+                // Notifica a atividade contêiner que os itens de entrada foram atualizados.
+                callback.onUpdateFoodItems(starterFoodList);
             }
         });
     }

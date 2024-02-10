@@ -16,10 +16,12 @@ import com.vinicius.menu.adapter.FoodAdapter;
 import com.vinicius.menu.databinding.FragmentDrinksBinding;
 import java.util.ArrayList;
 
+// DrinksFragment é responsável por exibir os itens de bebidas disponíveis no menu.
 public class DrinksFragment extends Fragment {
-    private FragmentDrinksBinding binding;
-    private DrinksFragmentCallback callback;
+    private FragmentDrinksBinding binding; // Utiliza View Binding para acessar as views.
+    private DrinksFragmentCallback callback; // Interface de callback para comunicação com a atividade principal.
 
+    // Interface para definir o callback que será chamado quando os itens de bebida forem atualizados.
     public interface DrinksFragmentCallback {
         void onUpdateFoodItems(ArrayList<Food> foodList);
     }
@@ -27,22 +29,23 @@ public class DrinksFragment extends Fragment {
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
+        // Verifica se a atividade contêiner implementou o callback necessário.
         if (context instanceof DrinksFragmentCallback) {
             callback = (DrinksFragmentCallback) context;
         } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement DrinksFragmentCallback");
+            throw new RuntimeException(context.toString() + " must implement DrinksFragmentCallback");
         }
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        callback = null;
+        callback = null; // Limpa a referência ao callback para evitar vazamentos de memória.
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // Infla o layout do fragmento usando View Binding.
         binding = FragmentDrinksBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
@@ -50,21 +53,24 @@ public class DrinksFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        RecyclerView recyclerViewFood = binding.recycleDrinks;
-        recyclerViewFood.setLayoutManager(new LinearLayoutManager(requireContext()));
-        recyclerViewFood.setHasFixedSize(true);
+        // Configura o RecyclerView com um LinearLayoutManager e o adapter.
+        RecyclerView recyclerViewDrinks = binding.recycleDrinks;
+        recyclerViewDrinks.setLayoutManager(new LinearLayoutManager(requireContext()));
+        recyclerViewDrinks.setHasFixedSize(true);
 
+        // Obtém a lista de itens de bebida da atividade principal.
         Menu activity = (Menu) getActivity();
         ArrayList<Food> drinksFoodList = activity.getFoodItemsByCategory("Drinks");
-        FoodAdapter foodAdapter = new FoodAdapter(drinksFoodList, requireContext());
-        recyclerViewFood.setAdapter(foodAdapter);
 
-        foodAdapter.setFoodItemChangeListener(new FoodAdapter.FoodItemChangeListener() {
-            @Override
-            public void onFoodItemSelectionChanged() {
-                if (callback != null) {
-                    callback.onUpdateFoodItems(drinksFoodList);
-                }
+        // Cria e configura o adapter para o RecyclerView com os itens de bebida.
+        FoodAdapter foodAdapter = new FoodAdapter(drinksFoodList, requireContext());
+        recyclerViewDrinks.setAdapter(foodAdapter);
+
+        // Define um listener no adapter para detectar mudanças na seleção dos itens.
+        foodAdapter.setFoodItemChangeListener(() -> {
+            if (callback != null) {
+                // Notifica a atividade contêiner que os itens de bebida foram atualizados.
+                callback.onUpdateFoodItems(drinksFoodList);
             }
         });
     }
