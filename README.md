@@ -1,33 +1,30 @@
-# Menu Android em Java
+# Android Menu in Java
 
-Bem-vindo ao Menu Android desenvolvido em Java. Este aplicativo oferece funcionalidades essenciais para exibir um cardápio, calcular o valor total do pedido, facilitar o checkout e inclui um temporizador.
+Welcome to the Android Menu developed in Java. This app offers essential functionalities for displaying a menu, calculating the total order value, facilitating checkout, and includes a built-in timer.
 
-## Funcionalidades Principais
+## Key Features
 
-- **Cardápio Interativo:** Navegue facilmente por uma variedade de itens de menu com descrições e preços.
+- **Interactive Menu:** Easily browse through a variety of menu items with descriptions and prices.
+  
+- **Order Calculator:** Keep track of your total order value as you make your selections.
 
-- **Calculadora de Pedido:** Acompanhe o valor total do seu pedido enquanto faz suas seleções.
+- **Simple Checkout:** Proceed to checkout in an intuitive and efficient manner.
 
-- **Checkout Simples:** Prossiga para o checkout de forma intuitiva e eficiente.
+- **Integrated Timer:** Use a handy timer to monitor wait time.
 
-- **Temporizador Integrado:** Utilize um temporizador prático para monitorar o tempo de espera.
+## Screenshots
 
-## Capturas de Tela
+<div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+  <img src="https://github.com/viniciusmecosta/menu_android_java/assets/118303495/47a891e0-2e7f-4486-a1bb-ee4c6e5f17e4" width="200" alt="Screenshot_2">
+  <img src="https://github.com/viniciusmecosta/menu_android_java/assets/118303495/dc647b8f-d72a-4634-87f7-a3ebc317ffe6" width="200" alt="Screenshot_1">
+  <img src="https://github.com/viniciusmecosta/menu_android_java/assets/118303495/53898127-c11c-4701-a19e-36bf5d2f16e7" width="200" alt="Screenshot_6">
+  <img src="https://github.com/viniciusmecosta/menu_android_java/assets/118303495/be39238f-c193-44a2-a123-3f131f6513c0" width="200" alt="Screenshot_5">
+  <img src="https://github.com/viniciusmecosta/menu_android_java/assets/118303495/fda2ec63-c5fe-4714-a4bb-147e7b944c85" width="200" alt="Screenshot_4">
+  <img src="https://github.com/viniciusmecosta/menu_android_java/assets/118303495/456328ca-4a62-42ea-9dc7-30e01888a56c" width="200" alt="Screenshot_3">
+</div>
 
-<p align="center">
-  <img src="https://github.com/viniciusmecosta/menu_android_java/assets/118303495/47a891e0-2e7f-4486-a1bb-ee4c6e5f17e4" width="240" alt="Screenshot_2">
-  <img src="https://github.com/viniciusmecosta/menu_android_java/assets/118303495/dc647b8f-d72a-4634-87f7-a3ebc317ffe6" width="240" alt="Screenshot_1">
-  <img src="https://github.com/viniciusmecosta/menu_android_java/assets/118303495/53898127-c11c-4701-a19e-36bf5d2f16e7" width="240" alt="Screenshot_6">
-</p>
+## How to Use
 
-<p align="center">
-  <img src="https://github.com/viniciusmecosta/menu_android_java/assets/118303495/be39238f-c193-44a2-a123-3f131f6513c0" width="240" alt="Screenshot_5">
-  <img src="https://github.com/viniciusmecosta/menu_android_java/assets/118303495/fda2ec63-c5fe-4714-a4bb-147e7b944c85" width="240" alt="Screenshot_4">
-  <img src="https://github.com/viniciusmecosta/menu_android_java/assets/118303495/456328ca-4a62-42ea-9dc7-30e01888a56c" width="240" alt="Screenshot_3">
-</p>
-
-## Como Usar
-
-1. Clone o repositório
-2. Abra o projeto no Android Studio.
-3. Compile e execute o aplicativo em um emulador ou dispositivo Android.
+1. Clone the repository.
+2. Open the project in Android Studio.
+3. Build and run the app on an emulator or Android device.
